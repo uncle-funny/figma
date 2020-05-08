@@ -1,0 +1,49 @@
+.footer
+  padding-top: 7rem 
+  background-color: $color-section-bg
+  &-inner
+    padding-bottom: 7rem
+    border-bottom: 1px solid #E0E0E0
+    @include flex(center,space-between)
+    align-items: flex-start
+    &-block
+      flex-basis: 25%
+  &-nav
+    padding-top: 3.5rem
+    font-size: 1.4rem
+    line-height: 2.2rem
+    li
+      display: flex
+      margin-bottom: 3rem
+      img
+        display: block
+        margin-right: 2rem
+      &:last-child
+        margin-bottom: 0      
+      a      
+        color: $color-text
+        transition: all .3s ease        
+        position: relative 
+        &::after
+          content: ""
+          display: block
+          position: absolute
+          left: 0
+          bottom: -1rem
+          width: 5rem
+          height: 1px
+          background-color: $color-text
+          transform: scale(0)
+          transform-origin: left
+          transition: all .3s ease       
+        &:hover
+          color: darken($color-text, 40%)
+          &::after
+            transform: scale(1)
+  &-copyright
+    padding: 3rem 0
+    font-size: 1.3rem
+    line-height: 2.1rem
+    text-align: center
+      
+          

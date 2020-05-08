@@ -1,0 +1,112 @@
+.header
+  height: 100vh
+  background: url(../img/header-bg.png) no-repeat center center / cover
+  &-site
+    padding: 4rem 0
+    border-bottom: 1px solid #a1a1a1
+  &-nav
+    @include flex(center,flex-end)
+    flex-basis: 50%
+    list-style-type: none
+    li
+      margin-right: 4rem
+      transition: all .3s ease
+      position: relative
+      &::after
+        content: ""
+        display: block
+        height: 2px          
+        width: calc(100% + 4rem)
+        background-color: #fff
+        position: absolute
+        bottom: -4rem
+        left: -2rem
+        transform: scale(0)
+        transform-origin: center
+        transition: all .3s ease
+      &:hover 
+        cursor: pointer
+        &::after
+          transform: scale(1)          
+      &:last-child
+        margin-right: 0
+      a
+        color: $color-white
+  &-text    
+    @include flex(center,center)
+    flex-direction: column
+    color: $color-white
+    max-width: 829px
+    text-align: center
+    &-inner
+      padding: 0 15px
+      width: 100%
+      height: calc( 100% - 100px ) 
+      @include flex(center,center)
+    h1
+      font-size: 4.8rem
+      line-height: 6.4rem
+      @include Montserrat(700)
+
+// BURGER MENU
+            
+.burger-link
+  width: 5rem
+  height: 5rem
+  margin-left: auto
+  display: none
+  position: relative
+  background-color: transparent
+  border: none
+  span    
+    position: absolute
+    display: block
+    height: 7px
+    right: 0
+    background-color: #fff
+    transition: all .5s ease
+  span:nth-child(1)
+    width: 3rem
+    top: 0
+  span:nth-child(2)
+    width: 4rem
+    top: 50%
+    transform: translateY(-50%)
+  span:nth-child(3)
+    bottom: 0
+    width: 5rem     
+.burger-menu  
+  justify-content: center
+  align-items: start
+  padding-left: 1rem
+  width: 60%
+  height: 100vh
+  background-color: rgba(0, 0, 0, .9)
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  position: fixed
+  flex-direction: column 
+  transform: translateX(-100%)
+  transition: all .5s ease
+  li
+    margin-right: 0
+    margin-bottom: 7rem
+    &::after
+      transform-origin: right
+    a
+      font-size: 3rem
+.open-menu
+  transform: translateX(0%)
+.burger-close
+  span:nth-child(1)
+    width: 6rem
+    transform-origin: left
+    transform: rotate(45deg)
+  span:nth-child(2)
+    display: none
+  span:nth-child(3)
+    width: 6rem
+    transform-origin: left
+    transform: rotate(-45deg)

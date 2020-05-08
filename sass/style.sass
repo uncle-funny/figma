@@ -1,0 +1,72 @@
+
+@import '../css/normalize.css'
+@import 'fonts'
+@import 'variables'
+@import 'mixin'
+
+/* Basic Settings */
+
+*
+  box-sizing: border-box
+  &:focus
+    outline: none
+  
+html
+  font-size: 10px
+
+body
+  font-size: 1.6rem
+  @include Montserrat(500)
+  color: $color-text
+  line-height: 2.5rem
+      
+.container 
+  max-width: 1150px
+  width: 100%
+  padding-left: 15px
+  padding-right: 15px
+  margin-right: auto
+  margin-left: auto
+
+img
+  max-width: 100%
+
+// common styles
+
+.section-title
+  text-align: center
+  font-size: 3.6rem
+  color: $color-title
+  max-width: 74rem
+  margin: 0 auto
+  line-height: 5.3rem
+.white-title
+  color: $color-white
+.button
+  display: block
+  padding: 1.3rem 3.6rem
+  color: $color-white
+  background-color: $color-main
+  box-shadow: 0px 0px 10px rgba(111, 111, 111, 0.25)
+  border-radius: 30px
+  border: none
+  transition: all .3s ease
+  &:hover
+    cursor: pointer
+    background-color: darken($color-main, 5%) 
+.main-link
+  color: $color-main
+  text-decoration: underline
+  &:hover
+    color: darken( $color-main, 10%)
+    text-decoration: underline
+  &:visited
+    color: darken( $color-main, 30%)
+.footer-title  
+  font-size: 1.8rem
+  color: $color-title
+  font-weight: 600             
+
+
+@import 'sections'
+@import 'media'
